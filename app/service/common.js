@@ -2,7 +2,7 @@ const Service = require('egg').Service;
 const fs = require('fs');
 class CommonService extends Service {
     //获取分页参数
-    async log(){
+    async log(adcode){
         //指定一个文件夹并写入文件，如果不存在则创建该文件夹。
         const writeFileRecursive = function(path, buffer, callback){
             let lastPath = path.substring(0, path.lastIndexOf("/"));
@@ -16,7 +16,7 @@ class CommonService extends Service {
         };
 
         //从 yy 查询上获取数据
-        const result = await this.ctx.curl('https://api.ratingdog.cn/map/bound/231102.json', {
+        const result = await this.ctx.curl('https://api.ratingdog.cn/map/bound/'+adcode +'.json', {
             // 自动解析 JSON response
             dataType: 'text',
             // 30 秒超时
@@ -25,7 +25,7 @@ class CommonService extends Service {
         let str1 = JSON.stringify(result.data).replace(/\\/g,"");
         let str2 = str1.substr(2,str1.length-2);
         let str3 = str2.substr(0,str2.length-1);
-        writeFileRecursive('./json/231106.json',str3,function (err) {
+        writeFileRecursive('./json/'+adcode+'.json',str3,function (err) {
             if (err) {
                 res.status(500).send('Server is error...'
 

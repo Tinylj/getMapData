@@ -14,9 +14,10 @@ class mapController extends Controller {
         console.log(areaCodeList);
 
         for(let i=0;i<areaCodeList.data.rows.length;i++) {
-
+            let copy_i = areaCodeList.data.rows[i];
+            let mlc = await this.ctx.service.common.log(copy_i.adcode);
         }
-        let mlc = await this.ctx.service.common.log();
+        // let mlc = await this.ctx.service.common.log();
 
         this.ctx.body = {
             package: "心态崩了啊，老铁。正在下载自己不会看文件夹吗...",

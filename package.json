@@ -1,0 +1,23 @@
+{
+  "name": "getMapData",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "egg-bin dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://lujin@10.1.80.26/r/lhdna/bond/html/lh-dna-bond-html-new.git"
+  },
+  "author": "Tinylj (lujin.pt@163.com)",
+  "license": "ISC",
+  "dependencies": {
+    "egg": "^2.22.2",
+    "egg-view-nunjucks": "^2.2.0"
+  },
+  "devDependencies": {
+    "egg-bin": "^4.13.1"
+  }
+}

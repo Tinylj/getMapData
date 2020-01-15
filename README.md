@@ -1,0 +1,2 @@
+# getMapData
+get map data
